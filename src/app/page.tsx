@@ -27,7 +27,7 @@ const Card = ({
 
 const Label = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="absolute top-0 right-0 rotate-12 text-reg-10 bg-green-300/35 text-green-300 px-1.5 py-1 rounded-md">
+    <span className="absolute top-0 right-0 rotate-12 text-reg-10 bg-green-300/35 text-green-500 px-1.5 py-1 rounded-md">
       {children}
     </span>
   );
@@ -139,7 +139,7 @@ export default function Home() {
       </svg>
 
       <Container className="flex flex-col gap-8 md:gap-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-8 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-8 md:gap-12">
           {items.map((item, index) => (
             <Card
               key={index}

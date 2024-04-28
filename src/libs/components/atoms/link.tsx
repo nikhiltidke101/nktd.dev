@@ -25,7 +25,7 @@ export const Link = ({
           href={href}
           target="_blank"
           className={cx(
-            `text-primary duration-200 font-light ease-in-out font-news italic border-b-tertiary hover:border-b-green-600 border-b`,
+            `text-primary duration-200 font-light ease-in-out font-news italic border-b-tertiary hover:border-b-green-600 border-b `,
             className
           )}
           {...props}
@@ -40,7 +40,7 @@ export const Link = ({
     <ComponentToUse
       href={href ?? "/"}
       className={cx(
-        "text-primary duration-200 font-light ease-in-out font-news italic border-b-tertiary hover:border-b-green-600 border-b",
+        "text-primary duration-200 font-light ease-in-out font-news border-b-tertiary hover:border-b-green-600 border-b border-spacing-0",
         className
       )}
       {...props}
