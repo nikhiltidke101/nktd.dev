@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/libs/components/atoms/link";
 import { Container } from "@/libs/components/organisms/container";
+import { NewsLetter } from "@/libs/components/misc/newsletter";
 
 const Card = ({
   title,
@@ -137,8 +138,8 @@ export default function Home() {
         ></rect>
       </svg>
 
-      <Container className="flex flex-col gap-16">
-        <div className="grid grid-cols-3 w-full gap-16">
+      <Container className="flex flex-col gap-8 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-8 md:gap-16">
           {items.map((item, index) => (
             <Card
               key={index}
@@ -182,6 +183,8 @@ export default function Home() {
             fill="url(#pattern-75)"
           ></rect>
         </svg>
+
+        <NewsLetter />
       </Container>
     </main>
   );
