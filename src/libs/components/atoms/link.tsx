@@ -20,12 +20,12 @@ export const Link = ({
     href?.startsWith("tel")
   ) {
     return (
-      <span className="after:content-['↗'] after:text-reg-12 after:relative after:top-[-0.1em] after:ml-1 hover:text-green-500">
+      <span className="after:content-['↗'] text-tertiary after:text-reg-16 after:relative after:ml-1 after:mb-0 hover:after:text-yellow-500">
         <ComponentToUse
           href={href}
           target="_blank"
           className={cx(
-            `text-primary duration-200 font-light ease-in-out font-news italic border-b-tertiary hover:border-b-green-600 border-b `,
+            `text-primary duration-200 font-extralight ease-in-out underline underline-offset-2 decoration-tertiary hover:decoration-yellow-500`,
             className
           )}
           {...props}
@@ -40,7 +40,7 @@ export const Link = ({
     <ComponentToUse
       href={href ?? "/"}
       className={cx(
-        "text-primary duration-200 font-light ease-in-out font-news border-b-tertiary hover:border-b-green-600 border-b border-spacing-0",
+        "text-primary duration-200 font-extralight ease-in-out underline underline-offset-2 decoration-tertiary hover:decoration-yellow-500",
         className
       )}
       {...props}

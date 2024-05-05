@@ -54,14 +54,7 @@ export const NewsLetter = () => {
   };
 
   return (
-    <div className="font-light text-reg-17 flex flex-col gap-2">
-      <h3 className="text-primary">DGARDEN (Digital Garden)</h3>
-      <p className="text-secondary">
-        A monthly newsletter where I share my learnings and links to anything
-        Ive found interesting. I don’t usually share this stuff anywhere else
-        but in this newsletter.
-      </p>
-
+    <div className="font-extralight text-reg-16 flex flex-col gap-2">
       <form
         className="mt-6 flex h-10 items-center justify-between gap-2 overflow-hidden rounded-md bg-foreground shadow-border 
            focus-within:border-gray-800 focus-within:outline-none focus-within:ring-2 focus-within:ring-black/20 focus-within:ring-offset-0"
@@ -74,7 +67,7 @@ export const NewsLetter = () => {
           id="email"
           type="email"
           ref={emailRef}
-          className="h-full w-[40%] grow border-none bg-transparent px-3.5 transition-colors text-secondary placeholder:text-secondary placeholder:text-reg-17 focus:outline-none"
+          className="h-full w-[40%] grow border-none bg-transparent px-3.5 transition-colors text-secondary placeholder:text-secondary placeholder:text-reg-16 focus:outline-none"
           placeholder="Enter your email"
           required
         />
@@ -82,7 +75,7 @@ export const NewsLetter = () => {
           type="submit"
           className="mr-1 h-[30px] w-[80px] rounded-[4px] bg-background dark:text-primary px-1.5 text-sm font-medium outline-none focus:outline-tertiary md:w-[104px] md:px-3.5"
         >
-          <span className="flex font-light items-center justify-center">
+          <span className="flex font-extralight items-center justify-center">
             {pending ? (
               <svg
                 aria-hidden="true"

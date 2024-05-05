@@ -46,16 +46,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="light"
-      className={cx(
-        "text-black bg-background dark:text-white] font-sans",
-        newsreader.variable,
-        inter.variable
-      )}
+      data-theme="dark"
+      className={cx("font-sans", newsreader.variable, inter.variable)}
       suppressHydrationWarning
     >
       <body>
         <ThemeProvider defaultTheme="dark" attribute="class">
+          <div className="blur" />
           {children}
         </ThemeProvider>
       </body>

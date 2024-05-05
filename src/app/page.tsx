@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/libs/components/atoms/link";
 import { Container } from "@/libs/components/organisms/container";
 import { NewsLetter } from "@/libs/components/misc/newsletter";
+import { HR } from "@/libs/components/atoms/divider";
 
 const Card = ({
   title,
@@ -15,176 +16,138 @@ const Card = ({
   label?: string;
 }) => {
   return (
-    <div className="relative w-full space-y-2 flex flex-col justify-end">
+    <div className="relative w-full space-y-2 flex flex-col justify-start">
       {!href && <Label>{label ?? "upcoming"}</Label>}
-      <h2 className="font-news text-reg-20 font-extralight">
+      <h2 className="font-inter text-reg-16 font-extralight">
         <Link href={href}>{title}</Link>
       </h2>
-      <p className="font-light text-secondary">{subtitle}</p>
+      <p className="font-extralight text-secondary text-reg-16">{subtitle}</p>
     </div>
   );
 };
 
 const Label = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className="absolute top-0 right-0 rotate-12 text-reg-10 bg-green-300/35 text-green-500 px-1.5 py-1 rounded-md">
+    <span className="absolute top-0 right-0 rotate-12 text-reg-10 bg-yellow-300/35 text-yellow-500 px-1.5 py-1 rounded-md">
       {children}
     </span>
   );
 };
 
-const items = [
+const items: {
+  title: string;
+  subtitle: string;
+  href?: string;
+  label?: string;
+}[] = [
   {
     title: "About",
-    subtitle: "What, why, how",
+    subtitle: "what? why? where? who am i? ",
     href: "/about",
   },
   {
     title: "Now",
-    subtitle: "Short-term focus",
+    subtitle: "what i'm doing now, and what's next",
     href: "/now",
   },
   {
-    title: "Someday",
-    subtitle: "Long-term goals",
-    label: "figuring out",
-  },
-  {
-    title: "D-garden",
-    subtitle: "Growing phils",
-  },
-  {
-    title: "Work",
-    subtitle: "Professional life",
-    href: "/work",
-  },
-  {
-    title: "Resources",
-    subtitle: "Links and tools",
-  },
-  {
     title: "Colophon",
-    subtitle: "Why build this?",
+    subtitle: "why i built this site, and some details",
     href: "/contact",
+  },
+];
+
+const socials = [
+  {
+    name: "twitter",
+    link: "https://twitter.com/nikhillst",
+  },
+  {
+    name: "github",
+    link: "https://github.com/nikhiltidke101",
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/nikhil-tidke101/",
+  },
+  {
+    name: "instagram",
+    link: "https://www.instagram.com/_nikhiltidke_/",
   },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <header className="flex gap-4 bg-foreground pt-16 font-thin">
-        <Container className="flex text-primary flex-col gap-4">
-          <h1 className="flex items-center gap-2 text-reg-20 tracking-tight">
-            <Image
-              src="/profile.jpeg"
-              alt="nktd.dev"
-              width={32}
-              height={23}
-              className="rounded-full"
-            />
-            <span className="font-normal">nikhil tidke —</span>
-            <Link
-              className="leading-[90%] -mb-1.5"
-              href="https://twitter.com/nikhillst"
-            >
-              @nikhillst
-            </Link>
+    <main className="pb-16">
+      <header className="flex gap-4 bg-foreground font-thin">
+        <Container className="flex text-primary flex-col gap-8">
+          <h1 className="flex flex-col leading-8 text-reg-30 tracking-tight">
+            <span className="font-normal">nikhil tidke</span>
+            <span className="font-normal text-tertiary">design engineer</span>
           </h1>
 
-          <p className="font-sans text-reg-17 font-light text-secondary">
-            <em className="font-news text-reg-20 text-primary">
-              Crafting interfaces,
-            </em>{" "}
-            writing software and programs, experimenting with magical details in
-            user interfaces, currently work as{" "}
+          <p className="font-sans text-secondary text-reg-18">
+            <strong>Crafting interfaces,</strong> Creating, exploring, learning.
+            Keeping it simple. Currently working as{" "}
             <Link href="https://designengineer.io/">d-eng</Link> at{" "}
             <Link href="https://devrev.ai/">@devrev</Link>, where I create
             creative experinces for audience.
           </p>
         </Container>
       </header>
-
-      <svg width="100%" height="2px" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern
-            id="pattern-75"
-            patternUnits="userSpaceOnUse"
-            width="4"
-            height="4"
-          >
-            <g clip-path="url(#clip0)">
-              <path
-                d="M1 -1L5 3"
-                stroke="var(--secondary)"
-                stroke-width="0.5"
-              ></path>
-              <path
-                d="M-1 1L3 5"
-                stroke="var(--secondary)"
-                stroke-width="0.5"
-              ></path>
-            </g>
-          </pattern>
-          <clipPath id="clip0">
-            <rect width="4" height="4" fill="white"></rect>
-          </clipPath>
-        </defs>
-        <rect
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill="url(#pattern-75)"
-        ></rect>
-      </svg>
-
-      <Container className="flex flex-col gap-8 md:gap-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-8 md:gap-12">
-          {items.map((item, index) => (
-            <Card
-              key={index}
-              href={item.href}
-              label={item.label}
-              title={item.title}
-              subtitle={item.subtitle}
-            />
-          ))}
+      {/* <HR /> */}
+      <Container className="flex flex-col gap-10">
+        <div>
+          <h2 className="text-tertiary text-reg-16 mb-6">
+            {/* NAVIGATION —{" "} */}
+            <em className="font-news font-extralight">
+              where you can find me ⤵
+            </em>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 w-full gap-8">
+            {items.map((item, index) => (
+              <Card
+                key={index}
+                href={item.href}
+                label={item.label}
+                title={item.title}
+                subtitle={item.subtitle}
+              />
+            ))}
+          </div>
         </div>
-        <svg width="100%" height="2px" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern
-              id="pattern-75"
-              patternUnits="userSpaceOnUse"
-              width="4"
-              height="4"
-            >
-              <g clip-path="url(#clip0)">
-                <path
-                  d="M1 -1L5 3"
-                  stroke="var(--secondary)"
-                  stroke-width="0.5"
-                ></path>
-                <path
-                  d="M-1 1L3 5"
-                  stroke="var(--secondary)"
-                  stroke-width="0.5"
-                ></path>
-              </g>
-            </pattern>
-            <clipPath id="clip0">
-              <rect width="4" height="4" fill="white"></rect>
-            </clipPath>
-          </defs>
-          <rect
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            fill="url(#pattern-75)"
-          ></rect>
-        </svg>
+        <HR />
 
-        <NewsLetter />
+        <div>
+          <div>
+            <h3 className="text-tertiary font-extralight mb-6 text-reg-16">
+              {/* DGARDEN —{" "} */}
+              <em className="font-news">
+                digital garden of thoughts & resources ⤵
+              </em>
+            </h3>
+            <p className="text-secondary font-extralight text-reg-16">
+              A monthly newsletter where I share my learnings and links to
+              anything Ive found interesting. I don’t usually share this stuff
+              anywhere else but in this newsletter.
+            </p>
+          </div>
+          <NewsLetter />
+        </div>
+        <HR />
+
+        <div>
+          <h4 className="font-inter mb-6 text-reg-16 text-tertiary font-extralight">
+            <em className="font-news">i too, am social. ⤵</em>
+          </h4>
+          <div className="flex gap-4">
+            {socials.map((social, index) => (
+              <Link key={index} href={social.link}>
+                <em className="font-news">{social.name}</em>
+              </Link>
+            ))}
+          </div>
+        </div>
       </Container>
     </main>
   );
