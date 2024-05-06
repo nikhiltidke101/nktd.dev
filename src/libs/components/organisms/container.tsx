@@ -35,7 +35,7 @@ export const Container = ({
   className?: string;
 }) => {
   return (
-    <div className="max-w-2xl mx-auto w-full py-8 md:py-12">
+    <div className="max-w-2xl mx-auto w-full py-8 px-4 md:py-12">
       <div className={cx("w-full min-w-full", className)}>{children}</div>
     </div>
   );
