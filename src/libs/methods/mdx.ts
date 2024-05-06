@@ -54,5 +54,5 @@ export const getData = (
 ): { slug: string; metadata: Metadata; content: string } => {
   return getMDXData(path.join(process.cwd(), "/src/content")).find(
     (post) => post.slug === slug
-  );
+  )!;
 };

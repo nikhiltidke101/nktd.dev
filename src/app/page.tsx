@@ -53,7 +53,7 @@ const items: {
   {
     title: "Colophon",
     subtitle: "why i built this site, and some details",
-    href: "/contact",
+    href: "/colophon",
   },
 ];
 
@@ -83,7 +83,9 @@ export default function Home() {
         <Container className="flex text-primary flex-col gap-8">
           <h1 className="flex flex-col leading-8 text-reg-30 tracking-tight">
             <span className="font-normal">nikhil tidke</span>
-            <span className="font-normal text-tertiary">design engineer</span>
+            <span className="font-normal text-tertiary">
+              programmer & engineer
+            </span>
           </h1>
 
           <p className="font-sans text-secondary text-reg-18">
