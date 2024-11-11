@@ -4,7 +4,7 @@ import { Link } from "../atoms/link";
 
 export const Track: React.FC<any> = async () => {
   const fetchTracks = async () => {
-    const response = await fetch(process.env.URL ?? "" + "/api/music");
+    const response = await fetch("/api/music");
 
     if (response.ok) {
       const data = await response.json();
