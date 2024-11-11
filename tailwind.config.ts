@@ -144,7 +144,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
-        news: ["var(--font-newsreader)"],
+        news: ["var(--font-news)"],
       },
       borderRadius: {
         small: "var(--radius-small)",
