@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const REQUEST_SCOPE = "user-read-recently-played"
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const REDIRECT_URI = `${process.env.VERCEL_URL}/api/music/callback`;
+const REDIRECT_URI = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/music/callback`;
 
 export async function GET(req: NextRequest, res: NextResponse) {
   const { code } = Object.fromEntries(

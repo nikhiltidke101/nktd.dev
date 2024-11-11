@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "../atoms/link";
 import Image from "next/image";
+import { Link } from "../atoms/link";
 
 export const Track: React.FC<any> = async () => {
   const fetchTracks = async () => {
-    const response = await fetch(process.env.VERCEL_URL + "/api/music");
+    const response = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL + "/api/music");
 
     if (response.ok) {
       const data = await response.json();
