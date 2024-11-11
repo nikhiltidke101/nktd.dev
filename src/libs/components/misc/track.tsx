@@ -1,18 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { Link } from "../atoms/link";
+import { fetchLatestTrack } from "@/libs/actions/track";
 
 export const Track: React.FC<any> = async () => {
-  const fetchTracks = async () => {
-    const response = await fetch("/api/music");
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.data.items?.[0];
-    }
-  };
-
-  const trackData = await fetchTracks();
+  const data = await fetchLatestTrack();
+  const trackData = data.items?.[0]
 
   const image = trackData?.track?.album?.images[0].url;
   const url = trackData?.track?.external_urls?.spotify;
