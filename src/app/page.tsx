@@ -3,6 +3,7 @@ import { Link } from "@/libs/components/atoms/link";
 import { Container } from "@/libs/components/organisms/container";
 import { NewsLetter } from "@/libs/components/misc/newsletter";
 import { HR } from "@/libs/components/atoms/divider";
+import { Track } from "@/libs/components/misc/track";
 
 const Card = ({
   title,
@@ -79,22 +80,21 @@ const socials = [
 export default function Home() {
   return (
     <main className="pb-16">
-      <header className="flex gap-4 bg-foreground font-thin">
-        <Container className="flex text-primary flex-col gap-8">
-          <h1 className="flex flex-col leading-8 text-reg-30 tracking-tight">
-            <span className="font-normal">nikhil tidke</span>
-            <span className="font-normal text-tertiary">
+      <header className="flex gap-4 bg-background-2 font-thin">
+        <Container className="flex flex-col gap-8">
+          <h1 className="flex flex-col text-large">
+            <span className="font-light">nikhil tidke</span>
+            <span className="font-light text-muted">
               programmer & engineer
             </span>
           </h1>
 
-          <p className="font-sans text-secondary text-reg-18">
-            <strong>Crafting interfaces,</strong> Creating, exploring, learning.
-            Keeping it simple. Currently working as{" "}
+          <p className="font-sans text-secondary">
+            I'm a designer & developer based in blr/india.{" "} Currently working as {" "}
             <Link href="https://designengineer.io/">d-eng</Link> at{" "}
-            <Link href="https://devrev.ai/">@devrev</Link>, where I create
-            creative experinces for audience.
+            <Link href="https://devrev.ai/">@devrev</Link>, where I translate complex technical concepts into simple user experiences.
           </p>
+          <Track /> 
         </Container>
       </header>
       {/* <HR /> */}

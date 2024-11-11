@@ -4,7 +4,7 @@ import { cx } from "@/utils/misc";
 import { inter, newsreader } from "@/utils/fonts";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-import "./globals.css";
+import "../../globals.css";
 import Script from "next/script";
 
 export const metadata: Metadata = {

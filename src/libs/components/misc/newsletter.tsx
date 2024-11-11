@@ -56,7 +56,7 @@ export const NewsLetter = () => {
   return (
     <div className="font-extralight text-reg-16 flex flex-col gap-2">
       <form
-        className="mt-6 flex h-10 items-center justify-between gap-2 overflow-hidden rounded-md bg-foreground shadow-border 
+        className="mt-6 flex h-10 items-center justify-between gap-2 overflow-hidden rounded-md bg-background-2 shadow-border 
            focus-within:border-gray-800 focus-within:outline-none focus-within:ring-2 focus-within:ring-black/20 focus-within:ring-offset-0"
         onSubmit={(e) => {
           handleSubmit(e);
