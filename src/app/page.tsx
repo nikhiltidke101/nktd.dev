@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link } from "@/libs/components/atoms/link";
 import { Container } from "@/libs/components/organisms/container";
 import { NewsLetter } from "@/libs/components/misc/newsletter";
@@ -90,7 +89,7 @@ export default function Home() {
           </h1>
 
           <p className="font-sans text-secondary">
-            I'm a designer & developer based in blr/india.{" "} Currently working as {" "}
+            I&apos;m a designer & developer based in blr/india. Currently working as {" "}
             <Link href="https://designengineer.io/">d-eng</Link> at{" "}
             <Link href="https://devrev.ai/">@devrev</Link>, where I translate complex technical concepts into simple user experiences.
           </p>

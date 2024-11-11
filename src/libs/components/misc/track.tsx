@@ -39,7 +39,7 @@ export const Track: React.FC<any> = async () => {
 
           <p className="text-muted">
             {artists?.map((artist: any) => (
-              <span className="after:content-['_|_'] last:after:content-none">
+              <span key={artist.name} className="after:content-['_|_'] last:after:content-none">
                 {artist.name}
               </span>
             ))}
