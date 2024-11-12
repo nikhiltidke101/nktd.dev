@@ -26,24 +26,46 @@
   :root {
     --bg: var(--gray-1);
     --fg: var(--gray-12);
-
     --bg-secondary: var(--gray-3);
-    
     --muted: var(--gray-8);
+
+    /* Border Color */
     --border: var(--gray-6);
+
+    /* Scroll Bar */
     --scrollbar-thumb: var(--gray-4);
     --scrollbar-track: transparent;
+
+    /* Selection */
     --selection-background: var(--yellow-3);
     --selection-foreground: var(--yellow-11);
+
+    /* Kbd Selection */
     --kbd-background: var(--gray-3);
     --kbd-foreground: var(--gray-11);
     --kbd-border: var(--gray-4);
+
+    /* Background Higlights */
     --highlight-background: var(--yellow-3);
     --highlight-foreground: var(--yellow-11);
-    
+
+    /* Border Radius */
     --radius-small: 4px;
     --radius-base: 8px;
     --radius-large: 12px;
+
+    /* Fonts */
+    --font-size-1: 12px;
+    --font-size-2: 14px;
+    --font-size-3: 20px;
+
+    --line-height-1: 16px;
+    --line-height-2: 20px;
+    --line-height-3: 24px;
+
+    --letter-spacing-1: 0.0025em;
+    --letter-spacing-2: 0em;
+    --letter-spacing-3: 0em;
   }
 
   * {
@@ -68,7 +90,7 @@
   }
 
   html {
-    @apply text-default text-foreground bg-background;
+    @apply text-default text-foreground bg-background font-light;
 
     h1,
     h2,

@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-import plugin from "tailwindcss/plugin";
-
 const config: Config = {
   important: true,
   content: ["./src/libs/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -126,7 +124,6 @@ const config: Config = {
           thumb: "var(--scrollbar-thumb)",
           track: "var(--scrollbar-track)",
         },
-
         selection: {
           background: "var(--selection-background)",
           foreground: "var(--selection-foreground)",
@@ -142,6 +139,29 @@ const config: Config = {
           border: "var(--kbd-border)",
         },
       },
+      fontSize: {
+        'small': [
+          'var(--font-size-1)',
+          {
+            lineHeight: 'var(--line-height-1)',
+            letterSpacing: 'var(--letter-spacing-1)',
+          },
+        ],
+        'default': [
+          'var(--font-size-2)',
+          {
+            lineHeight: 'var(--line-height-2)',
+            letterSpacing: 'var(--letter-spacing-2)',
+          },
+        ],
+        'large': [
+          'var(--font-size-3)',
+          {
+            lineHeight: 'var(--line-height-3)',
+            letterSpacing: 'var(--letter-spacing-3)',
+          },
+        ],
+      },
       fontFamily: {
         inter: ["var(--font-inter)"],
         news: ["var(--font-news)"],
@@ -153,26 +173,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    plugin(({ addUtilities }) => {
-      addUtilities({
-        ".text-small": {
-          fontSize: "12px",
-          letterSpacing: "0.01px",
-        },
-        ".text-default": {
-          fontSize: "14px",
-          lineHeight: "21px",
-          letterSpacing: "-0.09px",
-        },
-        ".text-large": {
-          fontSize: '20px',
-          lineHeight: '24px',
-          letterSpacing: '-0.1px'
-        }
-      });
-    }),
-  ],
   darkMode: "class",
 };
 
