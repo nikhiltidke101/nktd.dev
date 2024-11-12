@@ -1,0 +1,14 @@
+echo "Staged .mdx files:"
+staged_mdx_files=$(git diff --cached --name-only -- '*.mdx')
+
+# Start of Selection
+# Check if there are any .mdx files staged
+if [ -z "$staged_mdx_files" ]; then
+    echo "No .mdx files staged."
+    exit 0
+fi
+# Pass the list of .mdx files as arguments to the JavaScript script
+node src/libs/scripts/update-mdx-timestamps.js $staged_mdx_files
+# End of Selection
+
+yarn build

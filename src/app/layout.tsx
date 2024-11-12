@@ -3,6 +3,7 @@ import { cx } from "@/utils/misc";
 
 import { inter, newsreader } from "@/utils/fonts";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { Analytics } from '@vercel/analytics/react';
 
 import "../../globals.css";
 import Script from "next/script";
@@ -56,6 +57,7 @@ export default function RootLayout({
           <div className="blur" />
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

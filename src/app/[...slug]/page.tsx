@@ -1,12 +1,11 @@
 import React from "react";
 
 import { Container } from "@/libs/components/organisms/container";
-import { Text } from "@/libs/components/atoms/text";
+import { Link } from "@/libs/components/atoms/link";
 import { getData } from "@/libs/methods/mdx";
 import { redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { Link } from "@/libs/components/atoms/link";
-import { Span } from "next/dist/trace";
+import { cx } from "class-variance-authority";
 
 function slugify(str: string) {
   return str
@@ -47,6 +46,16 @@ let components = {
   h6: createHeading(6),
   em: ({ children }: any) => <em className="font-news italic">{children}</em>,
   a: ({ children, href }: any) => <Link href={href}>{children}</Link>,
+  ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+    <ul className={cx("mt-2 ml-3 list-disc", className)} {...props} />
+  ),
+  li: ({
+    className,
+    children,
+    ...props
+  }: React.HTMLAttributes<HTMLLIElement>) => {
+    return <li className={cx("mt-2 ml-3 list-item", className)}>{children}</li>;
+  },
 };
 
 const page = ({ params }: { params?: any; searchParams?: any }) => {
@@ -54,37 +63,48 @@ const page = ({ params }: { params?: any; searchParams?: any }) => {
 
   if (!data) return redirect("/");
 
+  const createdAt = new Date(data.metadata.created).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+
+  const updatedAt = new Date(data.metadata.updated).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+
+  const publicationInfo = `Published ${createdAt} ⋅ Updated ${updatedAt}`;
+
   return (
     <div className="bg-background">
       <Container>
         <header className="flex flex-col gap-4 relative pb-10">
-          <div className="flex gap-2 text-reg-18 text-primary mb-4 font-inter mt-2">
-            <div className="sticky top-4">
-              <Link href="/" className="no-underline">
-                <span className="before:content-['↩'] before:mr-2 before:text-primary before:text-reg-14 font-news italic">
-                  index
-                </span>
-              </Link>
-            </div>
+          <div className="flex gap-2 text-reg-18 text-small mb-4 font-inter mt-2">
+            <Link href="/" className="no-underline">
+              <span className="before:content-['↩'] before:mr-2 before:text-primary before:text-small font-news italic">
+                index
+              </span>
+            </Link>
           </div>
 
-          <h1 className="flex flex-col gap-1 text-reg-18 text-primary">
-            <span>{data.metadata.title}</span>
-            <div className="flex justify-between text-secondary text-reg-14 font-sans font-light">
-              <span>March 21, 2024 (1mo ago)</span>
+          <h1 className="flex flex-col gap-1 text-reg-18">
+            <span className="text-default">{data.metadata.title}</span>
+            <div className="flex justify-between text-muted text-small font-light">
+              <span>{publicationInfo}</span>
               <span>101 views</span>
             </div>
           </h1>
         </header>
 
-        <article
-          className="prose w-full min-w-fit
-          prose-headings:text-primary prose-headings:font-normal prose-headings:font-sans prose-headings:mb-0
-          prose-p:text-secondary prose-p:font-extralight prose-p:font-sans prose-p:tracking-[0px]
-          prose-li:text-secondary prose-li:font-extralight
-          prose-strong:text-primary prose-strong:font-medium
-          "
-        >
+        <article>
           <MDXRemote source={data?.content} components={components} />
         </article>
       </Container>
