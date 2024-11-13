@@ -76,6 +76,15 @@ const socials = [
   },
 ];
 
+const quotes = [
+  "dreaming & creating",
+  "aspiring to inspire",
+  "creating reality",
+  "designing dreams",
+  "finding flow",
+  "praying"
+];
+
 export default function Home() {
   return (
     <main className="pb-16">
@@ -84,12 +93,12 @@ export default function Home() {
           <h1 className="flex flex-col text-large">
             <span className="font-light">nikhil tidke</span>
             <span className="font-light text-muted">
-              programmer & engineer
+              programmer & engineer <sup className="text-small"> • {quotes[Math.floor(Math.random() * quotes.length)]}</sup> 
             </span>
           </h1>
 
           <p className="font-sans text-secondary">
-            I&apos;m a designer & developer based in blr/india. Currently working as {" "}
+            I&apos;m a programmer & engineer based in blr, india. Currently working as {" "}
             <Link href="https://designengineer.io/">d-eng</Link> at{" "}
             <Link href="https://devrev.ai/">@devrev</Link>, where I translate complex technical concepts into simple user experiences.
           </p>
