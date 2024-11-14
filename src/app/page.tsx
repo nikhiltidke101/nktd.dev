@@ -4,6 +4,9 @@ import { NewsLetter } from "@/libs/components/misc/newsletter";
 import { HR } from "@/libs/components/atoms/divider";
 import { Track } from "@/libs/components/misc/track";
 
+
+export const dynamic = true;
+
 const Card = ({
   title,
   subtitle,
