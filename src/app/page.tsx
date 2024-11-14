@@ -5,7 +5,15 @@ import { HR } from "@/libs/components/atoms/divider";
 import { Track } from "@/libs/components/misc/track";
 
 
-export const dynamic = true;
+// @constant: dynamic: This variable is used to determine if the page is dynamic or not.
+export const dynamic = 'force-static';
+
+// @constant: dynamicParams: This variable is used to determine if the page has dynamic params or not.
+export const dynamicParams = true;
+
+// @constant: revalidate: This variable is used to determine the revalidate time for the page.
+export const revalidate = 0;
+
 
 const Card = ({
   title,
