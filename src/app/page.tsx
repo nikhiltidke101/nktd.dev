@@ -3,17 +3,21 @@ import { Container } from "@/libs/components/organisms/container";
 import { NewsLetter } from "@/libs/components/misc/newsletter";
 import { HR } from "@/libs/components/atoms/divider";
 import { Track } from "@/libs/components/misc/track";
-
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/libs/components/atoms/tooltip";
 
 // @constant: dynamic: This variable is used to determine if the page is dynamic or not.
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 // @constant: dynamicParams: This variable is used to determine if the page has dynamic params or not.
 export const dynamicParams = true;
 
 // @constant: revalidate: This variable is used to determine the revalidate time for the page.
 export const revalidate = 0;
-
 
 const Card = ({
   title,
@@ -93,8 +97,33 @@ const quotes = [
   "creating reality",
   "designing dreams",
   "finding flow",
-  "praying"
+  "praying",
 ];
+
+const LinkHover = () => {
+  return (
+    <TooltipProvider delayDuration={0}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link href="mailto:nikhiltidke101@gmail.com">
+            <em className="font-news">say hi!, i'm nice</em>
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent className="p-1">
+          <div className="space-y-2">
+            <img
+              className="w-[200px] rounded"
+              src="/hello.gif"
+              width={382}
+              height={216}
+              alt="Content image"
+            />
+          </div>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+};
 
 export default function Home() {
   return (
@@ -104,16 +133,21 @@ export default function Home() {
           <h1 className="flex flex-col text-large">
             <span className="font-light">nikhil tidke</span>
             <span className="font-light text-muted">
-              programmer & engineer <sup className="text-small"> • {quotes[Math.floor(Math.random() * quotes.length)]}</sup> 
+              programmer & engineer{" "}
+              <sup className="text-small">
+                {" "}
+                • {quotes[Math.floor(Math.random() * quotes.length)]}
+              </sup>
             </span>
           </h1>
 
           <p className="font-sans text-secondary">
-            I&apos;m a programmer & engineer based in blr, india. Currently working as {" "}
-            <Link href="https://designengineer.io/">d-eng</Link> at{" "}
-            <Link href="https://devrev.ai/">@devrev</Link>, where I translate complex technical concepts into simple user experiences.
+            I&apos;m a programmer & engineer based in blr, india. Currently
+            working as <Link href="https://designengineer.io/">d-eng</Link> at{" "}
+            <Link href="https://devrev.ai/">@devrev</Link>, where I translate
+            complex technical concepts into simple user experiences.
           </p>
-          <Track /> 
+          <Track />
         </Container>
       </header>
       {/* <HR /> */}
@@ -161,12 +195,15 @@ export default function Home() {
           <h4 className="font-inter mb-6 text-reg-16 text-tertiary font-extralight">
             <em className="font-news">i too, am social. ⤵</em>
           </h4>
-          <div className="flex gap-4">
-            {socials.map((social, index) => (
-              <Link key={index} href={social.link}>
-                <em className="font-news">{social.name}</em>
-              </Link>
-            ))}
+          <div className="flex gap-4 justify-between">
+            <div className="flex gap-4">
+              {socials.map((social, index) => (
+                <Link key={index} href={social.link}>
+                  <em className="font-news">{social.name}</em>
+                </Link>
+              ))}
+            </div>
+            <LinkHover />
           </div>
         </div>
       </Container>
