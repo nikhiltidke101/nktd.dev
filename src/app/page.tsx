@@ -106,13 +106,13 @@ const LinkHover = () => {
       <Tooltip>
         <TooltipTrigger asChild>
           <Link href="mailto:nikhiltidke101@gmail.com">
-            <em className="font-news">say hi!, i'm nice</em>
+            <em className="font-news">say hi!, i&apos;m nice</em>
           </Link>
         </TooltipTrigger>
         <TooltipContent className="p-1">
           <div className="space-y-2">
             <img
-              className="w-[200px] rounded"
+              className="w-[200px] rounded-xl"
               src="/hello.gif"
               width={382}
               height={216}
