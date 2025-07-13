@@ -146,7 +146,14 @@ export default function Home() {
             working as <Link href="https://designengineer.io/">d-eng</Link> at{" "}
             <Link href="https://devrev.ai/">@devrev</Link>, where I translate
             complex technical concepts into simple user experiences.
+            <br />
+            <br />
+            I’m drawn to both design and deep tech — with a particular interest
+            in math, machine learning, and backend systems. Outside of work,
+            you’ll usually find me reading research papers or building side
+            projects for fun (and learning).
           </p>
+
           <Track />
         </Container>
       </header>

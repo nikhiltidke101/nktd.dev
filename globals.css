@@ -113,7 +113,7 @@
     }
 
     a {
-      @apply transition hover:opacity-50;
+      /* @apply transition hover:opacity-50; */
     }
 
     ol {

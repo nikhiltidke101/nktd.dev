@@ -1,5 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
+import UnderlineToBackground from "../motion/underline-to-background";
+
 import { cx } from "@/utils/misc";
 
 export const Link = ({
@@ -25,12 +27,18 @@ export const Link = ({
           href={href}
           target="_blank"
           className={cx(
-            `text-primary duration-200 font-extralight ease-in-out underline underline-offset-[3px] decoration-tertiary hover:decoration-yellow-500`,
+            `text-primary duration-200 font-extralight ease-in-out`,
             className
           )}
           {...props}
         >
-          {children}
+          <UnderlineToBackground
+            targetTextColor="#ffffff"
+            underlineBackgroundColor="#eab308"
+            className="cursor-pointer"
+          >
+            {children}
+          </UnderlineToBackground>
         </ComponentToUse>
       </span>
     );
