@@ -70,6 +70,7 @@ const page = ({ params }: { params?: any; searchParams?: any }) => {
       month: "long",
       day: "numeric",
     }
+    
   );
 
   const updatedAt = new Date(data.metadata.updated).toLocaleDateString(
