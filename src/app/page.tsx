@@ -125,7 +125,7 @@ export default function Home() {
           <h1 className="flex flex-col text-large">
             <span className="font-light">nikhil tidke</span>
             <span className="font-light text-muted">
-              programmer & engineer{" "}
+              design & engineering{" "}
               <sup className="text-small">
                 {" "}
                 • {quotes[Math.floor(Math.random() * quotes.length)]}
@@ -135,7 +135,7 @@ export default function Home() {
 
           <p className="font-sans text-secondary">
             I&apos;m a programmer & engineer based in blr, india. Currently
-            working as <Link href="https://designengineer.io/">d-eng</Link> at{" "}
+            working as <Link href="https://designengineer.io/">engineer</Link> at{" "}
             <Link href="https://devrev.ai/">@devrev</Link>, where I translate
             complex technical concepts into simple user experiences.
             <br />
