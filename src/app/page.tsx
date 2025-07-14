@@ -17,7 +17,7 @@ export const dynamic = "force-static";
 export const dynamicParams = true;
 
 // @constant: revalidate: This variable is used to determine the revalidate time for the page.
-export const revalidate = 0;
+export const revalidate = 10;
 
 const Card = ({
   title,
@@ -74,20 +74,12 @@ const items: {
 
 const socials = [
   {
-    name: "twitter",
-    link: "https://twitter.com/nikhillst",
-  },
-  {
     name: "github",
     link: "https://github.com/nikhiltidke101",
   },
   {
     name: "linkedin",
     link: "https://www.linkedin.com/in/nikhil-tidke101/",
-  },
-  {
-    name: "instagram",
-    link: "https://www.instagram.com/_nikhiltidke_/",
   },
 ];
 
@@ -105,7 +97,7 @@ const LinkHover = () => {
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Link href="mailto:nikhiltidke101@gmail.com">
+          <Link href="https://x.com/niconeforall">
             <em className="font-news">say hi!, i&apos;m nice</em>
           </Link>
         </TooltipTrigger>
